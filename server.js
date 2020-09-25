@@ -33,7 +33,7 @@ app.post('/api/v1/getData', (req, res) => {
                     if(status) {
                         sqlQuery.push(`[Status] = '${status}'`);
                     }
-                    let query = `selecty * from LogHeader where ${sqlQuery.join(' AND ')} for json auto;`;
+                    let query = `select * from LogHeader where ${sqlQuery.join(' AND ')} for json auto;`;
                     request.query(query, (err, recordset) => {
                         if (err) {throw err}
                         else {
